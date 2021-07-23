@@ -500,7 +500,7 @@ async function isItemInStock(
       logger.info(Print.maxPrice(link, store, maxPrice, true));
       return false;
     }
-    if (`${link.price}` !== '') {
+    if (`${link.price}` === '') {
       logger.info(Print.priceNotFound(link, store, maxPrice, true));
       return false;
     }
