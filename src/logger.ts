@@ -153,6 +153,27 @@ export const Print = {
       link.price ?? ''
     } EXCEEDS LIMIT ${maxPrice}`;
   },
+  priceNotFound(
+    link: Link,
+    store: Store,
+    maxPrice: number,
+    color?: boolean
+  ): string {
+    if (color) {
+      return (
+        '✖ ' +
+        buildProductString(link, store, true) +
+        ' :: ' +
+        chalk.yellow(
+          `PRICE NOT FOUND`
+        )
+      );
+    }
+
+    return `✖ ${buildProductString(link, store)} :: PRICE ${
+      link.price ?? ''
+    } EXCEEDS LIMIT ${maxPrice}`;
+  },
   message(
     message: string,
     topic: string,
